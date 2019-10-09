@@ -17,6 +17,7 @@ public class ClassController {
     @Autowired
     ClassService service;
 
+
     @PostMapping(value ="/create" , produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Classs create(@RequestBody Classs classs) {

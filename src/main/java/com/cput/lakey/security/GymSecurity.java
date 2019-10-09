@@ -44,7 +44,7 @@ auth
                 .antMatchers(HttpMethod.DELETE, "/api/**").hasRole(ADMIN_ROLE)
                 .and()
                 .csrf().disable()
-                .formLogin();
+                .formLogin().disable();
 
     }
 

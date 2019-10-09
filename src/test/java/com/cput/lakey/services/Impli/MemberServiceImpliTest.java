@@ -65,7 +65,7 @@ public class MemberServiceImpliTest {
         System.out.println("In update, about_to_updated = " + member);
         Member updated = this.repository.save(member);
         System.out.println("In update, updated = " + updated);
-        Assert.assertSame(newName, updated.getName());
+        Assert.assertSame(newName, updated.getFirstName());
         d_getAll();
     }
 
@@ -79,8 +79,8 @@ public class MemberServiceImpliTest {
     @Test
     public void e_delete() {
         Member savedGender = this.member;
-        System.out.println("In getAll, all = " +savedGender.getIdMember());
-        this.repository.deleteById(savedGender.getIdMember());
+        System.out.println("In getAll, all = " +savedGender.getId());
+        this.repository.deleteById(savedGender.getId());
         d_getAll();
     }
 }

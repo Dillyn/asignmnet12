@@ -7,15 +7,17 @@ import java.util.Objects;
  *
  */
 @Entity
-@Table(name="gymMember")
+@Table(name = "gymMember")
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Integer id;
 
-    private Integer idMember;
+    @Column(name = "first_name")
+    private String firstName;
 
-    private String name;
-
+    @Column(name = "last_name")
     private String lastName;
 
 
@@ -28,18 +30,18 @@ public class Member {
     }
 
     private Member(Member.Builder builder) {
-        this.idMember = builder.idMember;
-        this.name = builder.name;
+        this.id = builder.id;
+        this.firstName = builder.firstName;
         this.lastName = builder.lastName;
     }
 
 
-    public Integer getIdMember() {
-        return idMember;
+    public Integer getId() {
+        return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
     public String getLastName() {
@@ -48,18 +50,18 @@ public class Member {
 
 
     public static class Builder {
-        private Integer idMember;
-        private String name;
+        private Integer id;
+        private String firstName;
 
         private String lastName;
 
         public Member.Builder idMember(Integer idMember) {
-            this.idMember = idMember;
+            this.id = idMember;
             return this;
         }
 
         public Member.Builder name(String name) {
-            this.name = name;
+            this.firstName = name;
             return this;
         }
 
@@ -69,11 +71,9 @@ public class Member {
         }
 
 
-
-
         public Member.Builder copy(Member member) {
-            this.idMember = member.getIdMember();
-            this.name = member.getName();
+            this.id = member.getId();
+            this.firstName = member.getFirstName();
 
             this.lastName = member.getLastName();
             return this;
@@ -88,8 +88,8 @@ public class Member {
     @Override
     public String toString() {
         return "Member{" +
-                "MemberId='" + idMember + '\'' +
-                ", MemberName='" + name + '\'' +
+                "MemberId='" + id + '\'' +
+                ", MemberName='" + firstName + '\'' +
                 ", MemberLastName='" + lastName + '\'' +
                 '}';
     }
@@ -99,12 +99,12 @@ public class Member {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Member member = (Member) o;
-        return Objects.equals(idMember, member.idMember);
+        return Objects.equals(id, member.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idMember);
+        return Objects.hash(id);
     }
 
 }

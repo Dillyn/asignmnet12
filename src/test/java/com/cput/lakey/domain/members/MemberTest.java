@@ -17,7 +17,7 @@ public class MemberTest {
 
         Member c = MemberFactory.getClasss(1,name,lastName);
         System.out.println(c);
-        assertNotNull(c.getIdMember()+"\n"+c.getName());
+        assertNotNull(c.getId()+"\n"+c.getFirstName());
     }
 
 }

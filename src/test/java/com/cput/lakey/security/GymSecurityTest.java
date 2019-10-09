@@ -1,4 +1,5 @@
 package com.cput.lakey.security;
+/*
 
 import com.cput.lakey.domain.members.Member;
 import com.cput.lakey.factories.members.MemberFactory;
@@ -59,4 +60,4 @@ public class GymSecurityTest {
     }
 
 
-}
+}*/
